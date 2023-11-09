@@ -19,9 +19,8 @@ export const uploadFile = (request, response) => {
     if(!request.file) 
         return response.status(404).json("File not found");
     
-    const imageUrl = `${url}/file/${request.file.filename}`;
-
-    response.status(200).json(imageUrl);    
+    const fileURL = `${url}/file/${request.file.filename}`;
+    response.status(200).json(fileURL);    
 }
 
 export const getFile = async (request, response) => {
