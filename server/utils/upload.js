@@ -11,7 +11,7 @@ const password = process.env.DB_PASSWORD;
 const storage = new GridFsStorage({
     url: `mongodb+srv://${username}:${password}@clone-whatsapp.4wihl0z.mongodb.net/?retryWrites=true&w=majority`,
     file: (request, file) => {
-        const match = ["image/png", "image/jpg"];
+        const match = ["image/png", "image/jpg", "application/pdf"];
 
         if(match.indexOf(file.memeType) === -1) 
             return`${Date.now()}-blog-${file.originalname}`;
