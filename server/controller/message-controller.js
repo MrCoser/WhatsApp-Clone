@@ -3,7 +3,7 @@ import Conversation from '../modal/Conversation.js';
 
 
 export const newMessage = async (request, response) => {
-    const newMessage = new Message(request.body);
+    const newMessage = new Mesafsage(request.body);
     try {
         await newMessage.save();
         await Conversation.findByIdAndUpdate(request.body.conversationId, { message: request.body.text });
