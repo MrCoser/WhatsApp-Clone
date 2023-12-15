@@ -3,11 +3,8 @@ import { io } from 'socket.io-client';
 export const AccountContext = createContext(null);
 
 const AccountProvider = ({children}) => {
-
     const [ account, setAccount ] = useState();
-    const [showloginButton, setShowloginButton] = useState(true);
     const [activeUsers, setActiveUsers] = useState([]);
-    
     const [newMessageFlag, setNewMessageFlag] = useState(false);
 
     const socket = useRef();
@@ -18,9 +15,7 @@ const AccountProvider = ({children}) => {
     return (
         <AccountContext.Provider value={{ 
             account, 
-            setAccount, 
-            showloginButton,
-            setShowloginButton,
+            setAccount,
             socket,
             activeUsers,
             setActiveUsers,
